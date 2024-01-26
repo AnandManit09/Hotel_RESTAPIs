@@ -27,7 +27,16 @@ public class HotelService {
 		return this.hotelMap.get(id);
 	}
 	
-	
+	public void updateHotel(Hotel updatedHotel) {
+		// 1. get the existing hotel
+				//2. delete the existing from list and add the updated one
+				//update the hotel in map
+		Hotel existing=getHotelbyId(updatedHotel.getId());
+		this.hotelList.remove(existing);
+		this.hotelList.add(updatedHotel);
+		
+		this.hotelMap.put(updatedHotel.getId(), updatedHotel);
+	}
 	
 	
 	
